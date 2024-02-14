@@ -1,0 +1,38 @@
+server:
+  #port: 8443
+
+  ssl:
+    enabled: true
+    key-alias: sanjay
+    key-store: classpath:sanjay-keystore.p12
+    key-store-password: secret
+    key-store-type: PKCS12
+  #QA DEMO
+  port: 9898
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/full_stack_ecommerce
+    username: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  data:
+    rest:
+      base-path: /api
+      detection-strategy: annotated
+
+allowed:
+  origins: https://localhost:4200
+
+okta:
+  oauth2:
+    client-id: 0oaez93i6iMnsai0d5d7
+    issuer: https://dev-94907289.okta.com/oauth2/default

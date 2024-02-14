@@ -1,0 +1,29 @@
+CREATE TABLE customer (id int PRIMARY KEY, 
+			first_name text,
+			last_name text,
+			email text
+			);
+
+CREATE TABLE order (id int PRIMARY KEY,
+			order_tracking_number int,
+			total_price int,
+			total_quatity int,
+			billing_address_id int,
+			shipping_address_id int,
+			customer_id int, 
+			status text,
+			date_created date,
+			last_updated date,
+			CONSTRAINT fk_country_id FOREIGN KEY (customer_id) REFERENCES customer(id),
+			CONSTRAINT fk_billing_address_id FOREIGN KEY (billing_address_id) REFERENCES address(id)
+			);
+
+CREATE TABLE order_item (id int PRIMARY KEY,
+				image_url text,
+				quantity int,
+				unit_price float,
+				order_id id,
+				CONSTRAINT fk_order_id  FOREIGN KEY(order_id) REFERENCES order(id) ;
+				product_id int);
+			
+			

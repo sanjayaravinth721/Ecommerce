@@ -70,18 +70,23 @@ This repository hosts the design and development of a robust Ecommerce platform,
 
 ### Relationships Diagram:
 
-```mermaid
-graph TD
-  Customer -->|One-to-Many| Order
-  Order -->|Many-to-One| Customer
-  Order -->|0 to 1| Address
-  Address -->|0 to 1| Order
-  Order_Item -->|Many-to-One| Order
-  Order_Item -->|Many-to-One| Product
-  Product -->|Many-to-One| Product_Category
-  Product_Category -->|One-to-Many| Product
-  Country -->|One-to-Many| State
-  State -->|Many-to-One| Country
+```plaintext
+Customer ----< Order
+   |
+   v
+Address ----< Order (billing and shipping)
+   |
+   v
+Order ----< Order_Item
+   |
+   v
+Product ----< Order_Item
+   |
+   v
+Product_Category ----< Product
+   |
+   v
+Country ----< State
 
 
 ### Deployment Guide

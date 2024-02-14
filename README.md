@@ -81,6 +81,9 @@ This repository hosts the design and development of a robust Ecommerce platform,
   - For Production: `npm start -- --configuration=production`
   - For Development: `npm start -- --configuration=development`
 
+### Security
+- The application is secured using HTTPS. Self-signed certificates have been created for both frontend and backend. The frontend is accessible at `https://localhost:4200`.
+
 ## Okta Integration
 
 ### Internal Workflow:
@@ -108,4 +111,4 @@ This repository hosts the design and development of a robust Ecommerce platform,
 - [Detailed Okta Authorization Flow](https://github.com/darbyluv2code/fullstack-angular-and-springboot/blob/master/bonus-content/secure-https-communication/openssl-setup.md)
 
 ## Noteworthy
-- This repository is a comprehensive Ecommerce solution, focusing on security, user experience, and seamless deployment across diverse environments. Explore the codebase to envision the future of online retail
+- This repository is a comprehensive Ecommerce solution, focusing on security, user experience, and seamless deployment across diverse environments. Explore the codebase to envision the future of online retail.

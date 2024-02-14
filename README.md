@@ -70,24 +70,22 @@ This repository hosts the design and development of a robust Ecommerce platform,
 
 ### Relationships Diagram:
 
-```plaintext
 Customer ----< Order
-   |
-   v
+│
+v
 Address ----< Order (billing and shipping)
-   |
-   v
+│
+v
 Order ----< Order_Item
-   |
-   v
+│
+v
 Product ----< Order_Item
-   |
-   v
+│
+v
 Product_Category ----< Product
-   |
-   v
-Country ----< State 
-```plaintext
+│
+v
+Country ----< State
 
 
 ### Deployment Guide

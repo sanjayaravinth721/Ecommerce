@@ -26,47 +26,63 @@ This repository hosts the design and development of a robust Ecommerce platform,
 
 ### Tables:
 
-#### 1. Customer:
+#### 1. Customer
 - **Fields:** id, firstname, lastname, email.
 - **Relationships:**
   - One-to-Many with Order (A customer can have 0 to many orders).
 
-#### 2. Order:
+#### 2. Order
 - **Fields:** id, order_tracking_number, total_price, total_quantity, billing_address_id, shipping_address_id, customer_id, status, date_created, last_updated.
 - **Relationships:**
   - Many-to-One with Customer (Many orders can belong to one customer).
   - 0 to 1 with Address for billing and shipping.
 
-#### 3. Address:
+#### 3. Address
 - **Fields:** id, city, country, state, street, zip_code.
 - **Relationships:**
   - 0 to 1 with Order for both billing and shipping addresses.
 
-#### 4. Order_Item:
+#### 4. Order_Item
 - **Fields:** id, image_url, quantity, unit_price, order_id, product_id.
 - **Relationships:**
   - Many-to-One with Order (Many order items can belong to one order).
   - Many-to-One with Product (Many order items can relate to one product).
 
-#### 5. Product:
+#### 5. Product
 - **Fields:** id, SKU, name, description, unit_price, image_url, active, units_in_stock, date_created, last_updated, category_id.
 - **Relationships:**
   - Many-to-One with Product_Category (Many products can belong to one category).
 
-#### 6. Product_Category:
+#### 6. Product_Category
 - **Fields:** id, category_name.
 - **Relationships:**
   - One-to-Many with Product (One category can have many products).
 
-#### 7. Country:
+#### 7. Country
 - **Fields:** id, code, name.
 - **Relationships:**
   - One-to-Many with State (One country can have many states).
 
-#### 8. State:
+#### 8. State
 - **Fields:** id, name, country_id.
 - **Relationships:**
   - Many-to-One with Country (Many states can belong to one country).
+
+### Relationships Diagram:
+
+```mermaid
+graph TD
+  Customer -->|One-to-Many| Order
+  Order -->|Many-to-One| Customer
+  Order -->|0 to 1| Address
+  Address -->|0 to 1| Order
+  Order_Item -->|Many-to-One| Order
+  Order_Item -->|Many-to-One| Product
+  Product -->|Many-to-One| Product_Category
+  Product_Category -->|One-to-Many| Product
+  Country -->|One-to-Many| State
+  State -->|Many-to-One| Country
+
 
 ### Deployment Guide
 - **Port Configurations:**

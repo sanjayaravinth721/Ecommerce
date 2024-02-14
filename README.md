@@ -86,7 +86,8 @@ Product ----< Order_Item
 Product_Category ----< Product
    |
    v
-Country ----< State
+Country ----< State 
+```plaintext
 
 
 ### Deployment Guide

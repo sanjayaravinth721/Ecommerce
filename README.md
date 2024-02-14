@@ -86,19 +86,17 @@ This repository hosts the design and development of a robust Ecommerce platform,
 
 ## Okta Integration
 
-### Internal Workflow:
-1. **User Authentication:**
-   - User logs in using Okta.
-   - Okta provides an auth token to the client app.
+### Okta Cloud Platform
+Okta serves as a cloud-based authorization server and platform, providing a robust set of authentication features including login widgets, social login, role-based access authorization, and comprehensive user management through an admin panel.
 
-2. **Access Token Request:**
-   - Client app requests an access token from Okta.
+### Industry Standards and Advantages
+Okta aligns with industry standards such as OAuth2, OpenID Connect, and JWT. This approach significantly reduces low-level boilerplate coding, offering convenient Software Development Kits (SDKs) for Angular and Java developers.
 
-3. **Access Token Verification:**
-   - Backend (Spring Boot) validates and verifies the access token with Okta.
+### OAuth2 Workflow
+In the OAuth2 workflow, the resource owner initiates the login process. The Angular client app receives these credentials, forwarding them to the Okta authorization server. Okta, in turn, responds by providing an authentication token. Subsequently, the client app requests an access token from the authorization server, and Okta returns the access token. The client app then transmits the access token to the Spring Boot resource server. Spring Boot meticulously verifies and validates the token with the Okta authorization server, ultimately granting access to protected resources.
 
-4. **Resource Access:**
-   - Spring Boot provides access to protected resources.
+This seamless integration ensures heightened security, offering a standardized and efficient authentication and authorization process. Okta's support for industry standards further enhances the application's overall security architecture.
+
 
 ## Technology Stack
 - Java Spring Boot
